@@ -16,34 +16,34 @@ int main()
 	{
 		return -1;
 	}
-	resize(src, src, Size(src.cols / 5, src.rows / 5), 0, 0, 3);
-	namedWindow("src", WINDOW_AUTOSIZE);
-	imshow("src", src);
+	//resize(src, src, Size(src.cols / 5, src.rows / 5), 0, 0, 3);
+	//namedWindow("src", WINDOW_AUTOSIZE);
+	//imshow("src", src);
 
-	//HSV·¶Î§
-	int iLowH = 100 / 2;
-	int iHighH = 120 / 2;
+	//HSVèŒƒå›´
+	int iLowH = 210 / 2;
+	int iHighH = 220 / 2;
 
-	int iLowS = 50 * 255 / 100;
-	int iHighS = 70 * 255 / 100;
+	int iLowS = 20 * 255 / 100;
+	int iHighS = 40 * 255 / 100;
 
-	int iLowV = 40 * 255 / 100;
+	int iLowV = 30 * 255 / 100;
 	int iHighV = 50 * 255 / 100;
 
 	cvtColor(src, imgHSV, COLOR_BGR2HSV);
-	namedWindow("imgHSV", WINDOW_AUTOSIZE);
+	namedWindow("imgHSV", WINDOW_NORMAL);
 	imshow("imgHSV", imgHSV);	
 	//imwrite("hsv.jpg", imgHSV);
 
 	Mat imgThresholded;
 	inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded);
-	//¿ª²Ù×÷ (È¥³ıÒ»Ğ©Ôëµã)
+	//å¼€æ“ä½œ (å»é™¤ä¸€äº›å™ªç‚¹)
 	Mat element = getStructuringElement(MORPH_RECT, Size(5, 5));
 	morphologyEx(imgThresholded, imgThresholded, MORPH_OPEN, element);
-	//±Õ²Ù×÷ (Á¬½ÓÒ»Ğ©Á¬Í¨Óò)  
+	//é—­æ“ä½œ (è¿æ¥ä¸€äº›è¿é€šåŸŸ)  
 	morphologyEx(imgThresholded, imgThresholded, MORPH_CLOSE, element);
 
-	namedWindow("Thresholded Image", WINDOW_AUTOSIZE);
+	namedWindow("Thresholded Image", WINDOW_NORMAL);
 	imshow("Thresholded Image", imgThresholded);
 
 	waitKey(0);
