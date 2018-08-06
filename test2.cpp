@@ -20,7 +20,7 @@ int main()
 	//namedWindow("src", WINDOW_AUTOSIZE);
 	//imshow("src", src);
 
-	//HSV范围
+	//HSV范围 不同的组件差别很大
 	int iLowH = 210 / 2;
 	int iHighH = 220 / 2;
 
