@@ -1,5 +1,5 @@
 # tensorflow-android
-本文档将帮助你在 win10_x64位 上生成 TF Classify, TF Detect, TF Speech, TF Stylize 四个安卓应用  
+本文档将帮助你在 win10_x64位 上建立 AS 工程，在 Android 5.0 之后的手机上生成 TF Classify, TF Detect, TF Speech, TF Stylize 四个安卓应用  
 ## 1 准备
 翻墙工具准备好（或者用 ipv6），全程开，下载安装好最新的 Android Studio（需要翻墙）  
 根据这个 https://www.cnblogs.com/xiadewang/p/7820377.html 或者类似的教程走一遍  
@@ -61,3 +61,12 @@ https://storage.googleapis.com/download.tensorflow.org/models/object_detection/s
 https://storage.googleapis.com/download.tensorflow.org/models/stylize_v1.zip  
 https://storage.googleapis.com/download.tensorflow.org/models/speech_commands_conv_actions.zip  
 放到 "path\to\TF\tensorflow-1.5.0\tensorflow\examples\android\gradleBuild\downloads" 下面，继续建立工程  
+可能会报如下警告，不用管  
+```Bash
+Configuration 'compile' is obsolete and has been replaced with 'implementation' and 'api'.
+It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
+```
+## 生成 APK
+手机连接电脑，并设置成 USB 调试  
+AS 上 Build APK(s)  
+感谢前人的工作  
