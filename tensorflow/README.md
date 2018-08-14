@@ -14,8 +14,8 @@ gradle 的压缩包会下载到 "C:\Users\用户名\.gradle\wrapper\dists\gradle
 修改 build.gradle 和 download-models.gradle 文件中所有的jcenter()为  
 ```Bash
 jcenter {
-       url 'http://jcenter.bintray.com'
-    }
+   url 'http://jcenter.bintray.com'
+}
 ```
 ```Bash
 repositories {
@@ -38,4 +38,7 @@ def nativeBuildSystem = 'cmake'
 ```Bash
 get_filename_component(TF_SRC_ROOT ${CMAKE_SOURCE_DIR}/include ABSOLUTE)
 ```
+在 jni 目录下新建 include 文件夹，把编译 object_tracking 所需要的 .h 头文件复制到此目录下，包括 tensorflow/core 和 tensorflow/examples 子目录的头文件  
+步骤 2 和 3 建立工程期间会提示下载 NDK 和 cmake，在 Android Studio 右上角的 SDK Manager 中找到并勾选  
+
 
