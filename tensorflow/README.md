@@ -1,7 +1,7 @@
 # tensorflow-android
 本文档将帮助你在 win10_x64位 上生成 TF Classify, TF Detect, TF Speech, TF Stylize 四个安卓应用  
 ## 1 准备
-翻墙工具准备好（或者用 ipv6），下载安装好最新的 Android Studio（需要翻墙）  
+翻墙工具准备好（或者用 ipv6），全程开，下载安装好最新的 Android Studio（需要翻墙）  
 根据这个 https://www.cnblogs.com/xiadewang/p/7820377.html 或者类似的教程走一遍  
 可能有些步骤会不一样，自行解决，安装过程会下载安装好 SDK  
 下载 tensorflow 的 zip 压缩包：https://github.com/tensorflow/tensorflow  
@@ -29,6 +29,14 @@ repositories {
     google()
 }
 ```
+```Bash
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
+    ...
+}
+# 对应 AS 3.1.2
+```
 ## 3 自己编译 libtensorflow_demo.so
 同样在 build.gradle中，修改 nativeBuildSystem：
 ```Bash
@@ -40,5 +48,16 @@ get_filename_component(TF_SRC_ROOT ${CMAKE_SOURCE_DIR}/include ABSOLUTE)
 ```
 在 jni 目录下新建 include 文件夹，把编译 object_tracking 所需要的 .h 头文件复制到此目录下，包括 tensorflow/core 和 tensorflow/examples 子目录的头文件  
 步骤 2 和 3 建立工程期间会提示下载 NDK 和 cmake，在 Android Studio 右上角的 SDK Manager 中找到并勾选  
-
-
+## 4 下载模型
+```Bash
+def models = ['inception5h.zip',
+              'object_detection/ssd_mobilenet_v1_android_export.zip',
+              'stylize_v1.zip',
+              'speech_commands_conv_actions.zip']
+```
+用浏览器下载，下载地址  
+https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip   
+https://storage.googleapis.com/download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_android_export.zip  
+https://storage.googleapis.com/download.tensorflow.org/models/stylize_v1.zip  
+https://storage.googleapis.com/download.tensorflow.org/models/speech_commands_conv_actions.zip  
+放到 "path\to\TF\tensorflow-1.5.0\tensorflow\examples\android\gradleBuild\downloads" 下面，继续建立工程  
