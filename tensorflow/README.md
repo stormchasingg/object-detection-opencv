@@ -68,7 +68,7 @@ https://storage.googleapis.com/download.tensorflow.org/models/speech_commands_co
 Configuration 'compile' is obsolete and has been replaced with 'implementation' and 'api'.
 It will be removed at the end of 2018. For more information see: http://d.android.com/r/tools/update-dependency-configurations.html
 ```
-## 生成 APK
+## 5 生成 APK
 手机连接电脑，并设置成 USB 调试  
 AS 上 Build APK(s)  
 感谢前人的工作  
