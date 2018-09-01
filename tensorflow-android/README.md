@@ -10,7 +10,7 @@
 ## 2 Android Studio 打开工程
 用 Android Studio 打开工程目录 "path\to\TF\tensorflow-1.5.0\tensorflow\examples\android"   
 打开工程后会提示相应 gradle 设置并建立工程  
-gradle 的压缩包会下载到 "C:\Users\username\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew"  
+gradle 的压缩包会下载到 "C:\Users\username\\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew"  
 最后那个乱序的文件夹名称可能会不同，下载过程即使翻墙了也会很慢，可以自己先浏览器搜索 gradle-4.1-all 下好放到目录中，再打开工程，不知道这样上面那个目录还会不会存在  
 
 修改 build.gradle 和 download-models.gradle 文件中所有的jcenter()为  
