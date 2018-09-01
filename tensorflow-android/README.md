@@ -70,5 +70,5 @@ It will be removed at the end of 2018. For more information see: http://d.androi
 ```
 ## 5 生成 APK
 手机连接电脑，并设置成 USB 调试  
-AS 上 Build APK(s) 在手机上会出现四个 tensorflow 的 app  
+AS 上 Build APK(s), 然后 run, 在手机上会出现四个 tensorflow 的 app  
 感谢前人的工作  
